@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Asset Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Asset
+  m_TableCollectionNameGuidString: 3ceab8cb853dd3a4095f5137517f23b8
+  m_Entries: []
+  m_Metadata:
+    m_Items:
+    - rid: 8582727932034678859
+    - rid: 8582727932034678862
+  m_KeyGenerator:
+    rid: 8582727932034678810
+  references:
+    version: 2
+    RefIds:
+    - rid: 8582727932034678810
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1677561589500
+    - rid: 8582727932034678859
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 3929779097600
+          m_TableCodes:
+          - en
+        - m_KeyId: 4071844368384
+          m_TableCodes:
+          - en
+        - m_KeyId: 4334646874112
+          m_TableCodes:
+          - en
+        - m_KeyId: 4334672039936
+          m_TableCodes:
+          - en
+        - m_KeyId: 4752558936064
+          m_TableCodes:
+          - en
+        - m_KeyId: 4752584101888
+          m_TableCodes:
+          - en
+        m_TypeString: TMPro.TMP_FontAsset, Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+    - rid: 8582727932034678862
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 3935361716224
+          m_TableCodes:
+          - en
+        - m_KeyId: 4071856951296
+          m_TableCodes:
+          - en
+        - m_KeyId: 4334659457024
+          m_TableCodes:
+          - en
+        - m_KeyId: 4334688817152
+          m_TableCodes:
+          - en
+        - m_KeyId: 4752571518976
+          m_TableCodes:
+          - en
+        - m_KeyId: 4752596684800
+          m_TableCodes:
+          - en
+        m_TypeString: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

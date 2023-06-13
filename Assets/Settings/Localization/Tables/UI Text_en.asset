@@ -1,0 +1,920 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: e185437d6d643ca4e9ce951d8b245bcd, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 4192817197378961421
+  m_TableData:
+  - m_Id: 922605735936
+    m_Localized: Project Voyager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4656148664320
+    m_Localized: Departure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4720673837056
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4736662523904
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4757734707200
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6797466685440
+    m_Localized: Preparation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6941792686080
+    m_Localized: All you need before Exploration.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7194268815360
+    m_Localized: Start Exploration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7414113259520
+    m_Localized: Upgrade Chips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7602554949632
+    m_Localized: Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7632720384000
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402605160681472
+    m_Localized: Attack Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402908958314496
+    m_Localized: This Cannon's Attack Damage increses by {0}
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 407680679563264
+    m_Localized: This Cannon's Attack Cooldown decreases by {0} sec.
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 407679328997376
+    m_Localized: Attack Speed Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 408028450279424
+    m_Localized: Player HP Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 408051728666624
+    m_Localized: Player HP increases by {0}
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 409242021810176
+    m_Localized: Laser Attack Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412444309999616
+    m_Localized: Movespeed Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412444309999617
+    m_Localized: Player Movespeed increases by {0}
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 412444309999618
+    m_Localized: Laser Attack Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412444309999619
+    m_Localized: "On this Cannon: \nAttack Damage increases by {0}; \nLaser Attack
+      can last longer by {1} sec"
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 412444309999620
+    m_Localized: Energy Attack Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412444309999621
+    m_Localized: "On this Cannon:\nAttack Damage increases by {0}; \nEnergy Attack
+      can affect larger area by {1} unit"
+    m_Metadata:
+      m_Items:
+      - rid: 4192817197378961421
+  - m_Id: 420494999703552
+    m_Localized: ' '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758954050605056
+    m_Localized: Change game settings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759639504736256
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1043751448760320
+    m_Localized: Chip Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1055346761551872
+    m_Localized: Cannon Overview
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1055438641975296
+    m_Localized: Select a Floating Cannon to set the Chip inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614336
+    m_Localized: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614337
+    m_Localized: Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614338
+    m_Localized: Nature
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614339
+    m_Localized: Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614340
+    m_Localized: Dark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614341
+    m_Localized: Bullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614342
+    m_Localized: Energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1066247929614343
+    m_Localized: Laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069385814265856
+    m_Localized: Starter Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069534179381248
+    m_Localized: A Chip at the beginning of your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069709006360576
+    m_Localized: Advanced Chip Ver.Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1069770226421760
+    m_Localized: A Chip that is NOT at the beginning of your journey.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070090226651136
+    m_Localized: Light Bullet Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070223534215168
+    m_Localized: It's dangerous to go alone! Take this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070664397508608
+    m_Localized: Dark Bullet Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070751668391936
+    m_Localized: It's dangerous to take this. Go along!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070998830338048
+    m_Localized: Fire Laser Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071082334736384
+    m_Localized: A chip that enables fire and laser attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071454679879680
+    m_Localized: Water Energy Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071561479442432
+    m_Localized: A chip that enables water and energy attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071650537099264
+    m_Localized: Nature Laser Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1071881999765504
+    m_Localized: A chip that enables nature and laser attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072058219253760
+    m_Localized: Light Energy Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072141983698944
+    m_Localized: A chip that enables Light and Energy attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072200058032128
+    m_Localized: Dark Laser Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072283772145664
+    m_Localized: A chip that enables Dark and Laser attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072436180570112
+    m_Localized: Advanced Chip Ver.Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072547715502080
+    m_Localized: A Chip that is NOT at the beginning of your journey. Water Version:)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1073158586519552
+    m_Localized: Advanced Chip Ver.Nature
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1073252908027904
+    m_Localized: A Chip that is NOT at the beginning of your journey. Nature Version:D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1080250848399360
+    m_Localized: "You don't have any Chip available. \nGet some by starting a new
+      Exploration."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1081926401544192
+    m_Localized: TEST CHIP name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1082103174680576
+    m_Localized: If you see this msg plz wake up. We miss you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838850174976
+    m_Localized: Standard Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535104
+    m_Localized: A very common chip. There are many signs of wear and tear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535105
+    m_Localized: Starpiece Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535106
+    m_Localized: An uncommon chip. Seems familiar to you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535107
+    m_Localized: Space Dataset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535108
+    m_Localized: 'A chip that is rare to be found. Originated from the deep space. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535109
+    m_Localized: Cosmos Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535110
+    m_Localized: A chip made by another universe. You feel unlimited power inside
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535111
+    m_Localized: Vague Infinity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3671838879535112
+    m_Localized: An imaginary chip that can barely hold its shape in the reality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3691849975222272
+    m_Localized: Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3693153191612416
+    m_Localized: Click To Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8090322371760128
+    m_Localized: Director
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8093792956993536
+    m_Localized: Designer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8093985949503488
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8094268003864576
+    m_Localized: Writer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8094324207538176
+    m_Localized: Developer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8094394118197248
+    m_Localized: Art Director
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8094978837729280
+    m_Localized: Concept Artist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8095073960349696
+    m_Localized: Animator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8095124505907200
+    m_Localized: Q/A Lead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8095246379798528
+    m_Localized: Special Thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8095309130780672
+    m_Localized: Void Fighter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8096068283027456
+    m_Localized: 'Yong Zhang
+
+      Yuhan Yang'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8096241813966848
+    m_Localized: 'Yuhan Yang
+
+      Yong Zhang'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8096328422150144
+    m_Localized: "Qiuheng Shen\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8100217833803776
+    m_Localized: All Talented Designers in CTIN-532 Spring 2023
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8103954597957632
+    m_Localized: Select Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8105219205779456
+    m_Localized: Start Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698422947840
+    m_Localized: Water Flow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142144
+    m_Localized: 'For Water Reaction: <br>Water to Fire Damage Multiplier +{0};<br>Slowdown
+      Duration +{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142145
+    m_Localized: Fire Burn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142146
+    m_Localized: 'For Fire Reaction: <br>Fire to Nature Damage Multiplier +{0};<br>Burn
+      Duration +{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142147
+    m_Localized: Nature Grow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142148
+    m_Localized: 'For Nature Reaction: <br>Nature to Water Damage Multiplier +{0};<br>Bounce
+      Range +{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142149
+    m_Localized: Water Stream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142150
+    m_Localized: For Water Reaction:<br>Water Reaction Damage Multiplier +{0};<br>Slowdown
+      Amount +{2}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142151
+    m_Localized: Fire Blaze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142152
+    m_Localized: 'For Fire Reaction: <br>Fire Reaction Damage Multiplier +{0};<br>Burn
+      Damage +{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142153
+    m_Localized: Nature Bloom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142154
+    m_Localized: 'For Nature Reaction: <br>Nature Reaction Damage Multiplier +{0};<br>Bounce
+      Damage +{1}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142155
+    m_Localized: Elemental Trinity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8702698427142156
+    m_Localized: Boost all elemental effect for Fire, Water and Nature.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8713397475889152
+    m_Localized: Previous Cannon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8713490866262016
+    m_Localized: Next Cannon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9823805574107136
+    m_Localized: Upgrade selected chip to make it stronger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9829755940917248
+    m_Localized: Upgrade!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13864484861894656
+    m_Localized: Click on the Chip Icon on the left to select.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13864725900156928
+    m_Localized: Upgrade Slot 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13864725900156929
+    m_Localized: Upgrade Slot 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13872003642548224
+    m_Localized: Awaiting Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13872003646742528
+    m_Localized: Please select a Chip from inventory:)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13881972307779584
+    m_Localized: Receive Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13889164779970560
+    m_Localized: 'Select 2 chips from your inventory,
+
+      then press ''Upgrade!"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390993334272
+    m_Localized: Water Counter Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528576
+    m_Localized: When your Water-Type attack hits an enemy with a Fire Element attached,
+      the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528577
+    m_Localized: Fire Counter Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528578
+    m_Localized: When your Fire-Type attack hits an enemy with a Nature Element attached,
+      the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528579
+    m_Localized: Nature Counter Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528580
+    m_Localized: When your Nature-Type attack hits an enemy with a Water Element
+      attached, the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528581
+    m_Localized: Water Resist Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528582
+    m_Localized: When your Water-Type attack hits an enemy with a Nature Element
+      attached, the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528583
+    m_Localized: Fire Resist Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528584
+    m_Localized: When your Fire-Type attack hits an enemy with a WaterElement attached,
+      the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528585
+    m_Localized: Nature Resist Damage Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528586
+    m_Localized: When your Nature-Type attack hits an enemy with a Fire Element attached,
+      the damage of this attack +{0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528587
+    m_Localized: Enhanced Slow Down
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528588
+    m_Localized: "Your Water-Type attack can Slow Down enemies. \nThe effect of Slow
+      Down effect increases by +{0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528589
+    m_Localized: Slow Down Effect Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528590
+    m_Localized: When your Water-Type attack hits an enemy, the duration of Slow
+      Down effect increases by +{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528591
+    m_Localized: Enhanced Bounce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528592
+    m_Localized: "Your Nature-Type attack can Bounce between enemies. \nThe Damage
+      of each Bounce increases by +{0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528593
+    m_Localized: Bounce Effect Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528594
+    m_Localized: When your Nature-Type attack hits an enemy , the damage of each
+      Bounce increases by +{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528595
+    m_Localized: Enhanced Burn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528596
+    m_Localized: "Your Fire-Type attack can Burn enemies. \nThe Damage of Burn effect
+      increases by +{0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528597
+    m_Localized: Burn Effect Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13921390997528598
+    m_Localized: When your Fire-Type attack hits an enemy, the duration of Burn Effect
+      increases by +{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13946485308645376
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13946485346394112
+    m_Localized: Sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562027659264
+    m_Localized: Standard Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213696
+    m_Localized: A very common chip. There are many signs of wear and tear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213697
+    m_Localized: Utility Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213698
+    m_Localized: A versatile chip designed for a range of applications.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213699
+    m_Localized: Basic Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213700
+    m_Localized: The most fundamental chip available. Its simplicity makes it easy
+      to use and suitable for beginners.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213701
+    m_Localized: Support Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213702
+    m_Localized: A specialized chip that enhances support functions. Its synergistic
+      effects can greatly benefit you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213703
+    m_Localized: Stability Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562061213704
+    m_Localized: A chip that focuses on maintaining balance and control. It ensures
+      consistent performance under various conditions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408000
+    m_Localized: Efficiency Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408001
+    m_Localized: An energy-conserving chip that optimizes power usage. Its advanced
+      algorithms provide longer operational times.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408002
+    m_Localized: Starpiece Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408003
+    m_Localized: An uncommon chip. Seems familiar to you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408004
+    m_Localized: Etherflow Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408005
+    m_Localized: A chip that detects the ether in space. You started to find traces
+      of human beings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408006
+    m_Localized: Lightweaver Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408007
+    m_Localized: A chip that manipulates photons to create dazzling effects. Its
+      advanced technology can confuse opponents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408008
+    m_Localized: Galaxyrise Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408009
+    m_Localized: 'A chip that detects the vast energy of entire galaxies. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408010
+    m_Localized: Echo Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408011
+    m_Localized: A chip that creates reverberating waves of energy. Its unique design
+      amplifies your attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408012
+    m_Localized: Timeflux Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408013
+    m_Localized: A chip that observes the flow of time. It allows you to act with
+      unparalleled speed and precision.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408014
+    m_Localized: Space Dataset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408015
+    m_Localized: A chip originated from the deep space. Its unique data provides
+      invaluable insights.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408016
+    m_Localized: Astral Archive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408017
+    m_Localized: A chip formed from stardust, containing vast celestial knowledge
+      from an era before humanity's disappearance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408018
+    m_Localized: Solar Switch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408019
+    m_Localized: A chip capturing the sun's relentless energy. It's a relic from
+      a sophisticated and forgotten civilization.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408020
+    m_Localized: Lunar Link
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408021
+    m_Localized: A chip made by Moonium Ore, resonating with the moon's ethereal
+      essence and natural cycles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408022
+    m_Localized: Gravity Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408023
+    m_Localized: A chip designed in an abandoned research facility that protect you
+      from unstable gravities.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408024
+    m_Localized: Pulsar Processor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408025
+    m_Localized: A chip originating from a supernova's remnants, imbued with the
+      vibrant energy of distant stars.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408026
+    m_Localized: Cosmos Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408027
+    m_Localized: A chip made by another universe. You feel unlimited power inside
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408028
+    m_Localized: Celestial Circuit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408029
+    m_Localized: A chip composed of supernova, connecting to the universe's fundamental
+      forces and rhythms.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408030
+    m_Localized: Solar Synchronizer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408031
+    m_Localized: A chip that resonates with solar flares, reflecting the harmony
+      between you and the sun's energy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408032
+    m_Localized: Lunar Lattice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408033
+    m_Localized: A chip that interweaves lunar essence, embodying the connection
+      between you and the moon's phases.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408034
+    m_Localized: Gravity Grimoire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408035
+    m_Localized: A chip containing complex formulas that manipulate gravitational
+      fields, a testament to the lost knowledge of an advanced civilization.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408036
+    m_Localized: Warp Wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408037
+    m_Localized: A chip that generates space-bending frequencies. You can traverse
+      vast distances in the blink of an eye.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408038
+    m_Localized: Vague Infinity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408039
+    m_Localized: An imaginary chip that can barely hold its shape in the reality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408040
+    m_Localized: Dimensional Decryptor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408041
+    m_Localized: A chip that decodes dimensional barriers, revealing hidden knowledge
+      and pathways beyond human comprehension.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408042
+    m_Localized: Quantum Codex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408043
+    m_Localized: A chip constructed from Quantum Principles. It's older than this
+      universe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408044
+    m_Localized: Galactic Enigma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408045
+    m_Localized: A chip that holds secrets of the galaxy's most perplexing phenomena,
+      a remnant of a bygone era of cosmic exploration.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408046
+    m_Localized: Void Symphony
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408047
+    m_Localized: A chip that resonates with the dark melodies of the universe, tapping
+      into the magical and technological powers of the void.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408048
+    m_Localized: Astro Annihilator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18886562065408049
+    m_Localized: A chip imbued with devastating power, fusing void magic and cutting-edge
+      technology to unleash apocalyptic destruction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18931736204271616
+    m_Localized: Quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18935458745540608
+    m_Localized: Surprise Chip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18935458745540609
+    m_Localized: "A chip that mysteriously appeared in the inventory. \nIt says \"Thank
+      you for watching the Credits screen!\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18950323023372288
+    m_Localized: Attack Speed Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18950323023372289
+    m_Localized: This Cannon's Bullet Attack Cooldown decreases by {0} sec.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4192817197378961421
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0050568d716e01000050d699a1730100005056f21e7301000050168ec8720100005056c23d740100015096ac1d770100035096ac1d770100055096ac1d770100

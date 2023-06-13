@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ffab47c99752c8418223ad62e57fdb1, type: 3}
+  m_Name: BattleData
+  m_EditorClassIdentifier: 
+  playerInitMoveSpeed: 40
+  playerInitHealth: 100
+  playerInitDefense: 10
+  bulletBasicStats:
+    cannonAttackType: 0
+    elementType: 0
+    attack: 10
+    attackCoolDown: 3
+    laserDuration: 0
+    energyRange: 0
+  laserBasicStats:
+    cannonAttackType: 1
+    elementType: 0
+    attack: 6
+    attackCoolDown: 4
+    laserDuration: 2
+    energyRange: 0
+  energyBasicStats:
+    cannonAttackType: 2
+    elementType: 0
+    attack: 4
+    attackCoolDown: 6
+    laserDuration: 0
+    energyRange: 1
+  fireElementReactionData:
+    overrideWaterDamageMultiplier: 1.2
+    overrideNatureDamageMultiplier: 2
+    burnDamage: 0
+    burnDuration: 2
+    burnBuffStackable: 0
+    stackDamage: 0
+  waterElementReactionData:
+    overrideFireDamageMultiplier: 2
+    overrideNatureDamageMultiplier: 1.2
+    speedChangeAmount: 0
+    slowDuration: 2
+  natureElementReactionData:
+    overrideWaterDamageMultiplier: 2
+    overrideFireDamageMultiplier: 1.2
+    bounceDamage: 0
+    bounceTargetNumber: 1
+    bounceRange: 10
+  enemySpiderBasicStats:
+    enemySpiderHealth: 3
+    enemySpiderDefense: 10
+    enemySpiderAttack: 20
+    enemySpiderAttackCoolDown: 2
+    enemySpiderMoveSpeed: 5
+    enemySpiderAnimationMoveSpeed: 3
+    enemySpiderMinMoveSpeed: 2
+    enemySpiderEnemyType: 0
+  enemyShootSpiderBasicStats:
+    enemySpiderHealth: 0
+    enemySpiderDefense: 0
+    enemySpiderAttack: 0
+    enemySpiderAttackCoolDown: 0
+    enemySpiderMoveSpeed: 0
+    enemySpiderAnimationMoveSpeed: 0
+    enemySpiderMinMoveSpeed: 0
+    enemySpiderEnemyType: 1
+  bossStats:
+    bossHealth: 100
+    bossDefense: 20
+    bossSpeedUpSkillAmount: 2
+    bossSpeedUpSkillDuration: 5
+    bossSpeedUpSkillNum: 5
+    bossLaserDamage: 20
+    bossSkillCoolDown: 7
+    bossBodyAttack: 15
+    bossBodyAttackLifeTime: 10
+    bossBodyAttackCoolDown: 15
+  weightForStayCannon:
+    distance: -10
+    cannonLocked: -1
+    enemyTypeCreepMelee: 1
+    enemyTypeCreepRange: 1
+    enemyTypeElite: 1
+    enemyTypeBoss: 1
+  weightForSearchCannon:
+    distance: -10
+    cannonLocked: -1
+    enemyTypeCreepMelee: 1
+    enemyTypeCreepRange: 5
+    enemyTypeElite: 5
+    enemyTypeBoss: 1
+  enemySpawnRule:
+    startChaosValue: 0
+    energyBallIncreaseChaosAmount: 3
+    frenzyEnergyBallIncreaseChaosAmount: 30
+    startEnemySpawnCoolDown: 2.5
+    enemySpawnCoolDownChaosMultiplier: -0.05
+    enemySpawnSafeRadiusAroundPlayer: 6
+    chaosBallSpawnSafeRadiusAroundPlayer: 15
+    enemyMaxSpawnRadiusAroundPlayer: 20
+    safeRadiusFromCenter: 7
+    arenaRadius: 35
+    startEnemyPerSecond: 0.4
+    enemyPerSecondChaosMultiplier: 0.08
+  enemySpiderChaosMultiplier:
+    enemySpiderHealthMultiplier: 0.3
+    enemySpiderDefenseMultiplier: 0.1
+    enemySpiderAttackMultiplier: 0.3
+    enemySpiderAttackCoolDownMultiplier: -0.01
+    enemySpiderMoveSpeedMultiplier: 0.02
+  enemySpiderShootChaosMultiplier:
+    enemySpiderHealthMultiplier: 0
+    enemySpiderDefenseMultiplier: 0
+    enemySpiderAttackMultiplier: 0
+    enemySpiderAttackCoolDownMultiplier: 0
+    enemySpiderMoveSpeedMultiplier: 0
+  pickUpConfig:
+    chaosBallIncreaseChaosAmount: 4.5
+    chaosBallSpawnEnemyNumber: 10
+    chaosBallExpValueEach: 3
+    voidCenterExpIncreaseValueEnemySpider: 1
+    voidCenterExpPowerUpValue: 10
+    voidCenterExpPowerUpValueIncreaseAfterEachPick: 6
+  isGainingChips: 0
+  chaosIncreasePerTenSeconds: 1.5
+  bossAppearTime: 360
+  gameEndTime: 600
+  isTesting: 0
+  testEnemyInformation:
+    enemySpiderHealth: 999999
+    enemySpiderDefense: 10
+    enemySpiderAttack: 0
+    enemySpiderAttackCoolDown: 0
+    enemySpiderMoveSpeed: 0.001
+    enemySpiderAnimationMoveSpeed: 3
+    enemySpiderMinMoveSpeed: 0
+    enemySpiderEnemyType: 0
+  cannonTestActiveList: 010000000000
+  testCannons:
+  - cannonId: 0
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 0
+      attack: 5
+      attackCoolDown: 2
+      laserDuration: 1
+      energyRange: 1
+  - cannonId: 1
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 2
+      attack: 5
+      attackCoolDown: 0.55
+      laserDuration: 1
+      energyRange: 1
+  - cannonId: 2
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 1
+      attack: 5
+      attackCoolDown: 0.9
+      laserDuration: 1
+      energyRange: 1
+  - cannonId: 3
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 1
+      attack: 5
+      attackCoolDown: 0.52
+      laserDuration: 1
+      energyRange: 1
+  - cannonId: 4
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 0
+      attack: 5
+      attackCoolDown: 0.6
+      laserDuration: 1
+      energyRange: 1
+  - cannonId: 5
+    cannonImportInfo:
+      cannonAttackType: 0
+      elementType: 0
+      attack: 5
+      attackCoolDown: 0.95
+      laserDuration: 1
+      energyRange: 1

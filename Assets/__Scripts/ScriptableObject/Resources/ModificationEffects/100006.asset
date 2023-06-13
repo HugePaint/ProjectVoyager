@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764ef1d8e37ac074b804d03604fdff7e, type: 3}
+  m_Name: 100006
+  m_EditorClassIdentifier: 
+  id: 100006
+  effectName: Energy Attack Boost
+  memo: Increase your Energy Attack Range as well as your attack damage.
+  effectType: 1
+  requiredElementTypes: 
+  requiredAttackTypes: 02000000
+  effectModifierIDs: e12e0000e42e0000
+  effectModifierValuesByRank:
+  - value:
+    - 1
+    - 0.05
+  - value:
+    - 2
+    - 0.1
+  - value:
+    - 3
+    - 0.15
+  - value:
+    - 4
+    - 0.2
+  - value:
+    - 5
+    - 0.3
+  - value:
+    - 7
+    - 0.3
+  - value:
+    - 9
+    - 0.3
+  - value:
+    - 13
+    - 0.3
+  - value:
+    - 17
+    - 0.3
+  - value:
+    - 20
+    - 0.3
+  - value:
+    - 25
+    - 0.3

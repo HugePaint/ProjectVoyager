@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764ef1d8e37ac074b804d03604fdff7e, type: 3}
+  m_Name: 100005
+  m_EditorClassIdentifier: 
+  id: 100005
+  effectName: Laser Attack Boost
+  memo: Increase your laser duration as well as your attack damage.
+  effectType: 1
+  requiredElementTypes: 
+  requiredAttackTypes: 01000000
+  effectModifierIDs: e12e0000e32e0000
+  effectModifierValuesByRank:
+  - value:
+    - 2
+    - -0.1
+  - value:
+    - 4
+    - -0.3
+  - value:
+    - 6
+    - -0.5
+  - value:
+    - 8
+    - -0.7
+  - value:
+    - 10
+    - -1
+  - value:
+    - 12
+    - -1
+  - value:
+    - 14
+    - -1
+  - value:
+    - 16
+    - -1
+  - value:
+    - 18
+    - -1
+  - value:
+    - 20
+    - -1
+  - value:
+    - 25
+    - -1

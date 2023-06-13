@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1830118675972527258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830118675972527257}
+  - component: {fileID: 1830118675972527256}
+  m_Layer: 0
+  m_Name: BattlePrefabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1830118675972527257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830118675972527258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2978783, y: -0.9984008, z: 21.594732}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830118675972527256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830118675972527258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23665a25f71baf845a13a5dac77f517c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletHolderParent: {fileID: 0}
+  expBallHolderParent: {fileID: 0}
+  laserHolderParent: {fileID: 0}
+  energyHolderParent: {fileID: 0}
+  expBallPrefab: {fileID: 6615669923881925690, guid: b743786eac8775541ae0bc1ff0a72172, type: 3}
+  fireElementSprite: {fileID: 21300000, guid: a7fe397463088af4c9f3ee435184dde7, type: 3}
+  waterElementSprite: {fileID: 21300000, guid: fc8e5624d5e09544a9aeb718b5b1ee18, type: 3}
+  natureElementSprite: {fileID: 21300000, guid: 528e863c07959ef4cb3cc8e7502d6a59, type: 3}
+  laserSprite: {fileID: 21300000, guid: a79633e21f1d88c4da1fa00d224cf6ae, type: 3}
+  bulletSprite: {fileID: 21300000, guid: 1dbced9db5d385d448951b6eaca56ecd, type: 3}
+  energySprite: {fileID: 21300000, guid: b5489ec253d027b48ac329fbc57dfa2e, type: 3}
+  bulletFire: {fileID: 7773191903499229356, guid: 532a4a0fe009de34baf3557ebc9a4482, type: 3}
+  bulletWater: {fileID: 5724930781608252797, guid: a0ac0d0e736b32d448983ea162b56cc2, type: 3}
+  bulletNature: {fileID: -5911256473352529590, guid: f99b6e131105c364fa43c7e710e844f0, type: 3}
+  bulletLight: {fileID: -5529808638324091773, guid: f667f32e9511c814296ef4ce757f346a, type: 3}
+  bulletDark: {fileID: -5273704858286981445, guid: 1991fb09d76f5eb4bbcca1fa9e0b6447, type: 3}
+  bulletFireHit: {fileID: 1220213892471706, guid: 1176dc23fbbaa4344839840157aa33f9, type: 3}
+  bulletWaterHit: {fileID: 1231636063597364, guid: df781ec4594cbbc4db4a0b7c35d08b49, type: 3}
+  bulletNatureHit: {fileID: 1612276239566916, guid: bcbeaa5372a8d0e4a94ab93316c7abc4, type: 3}
+  bulletLightHit: {fileID: 1746675453279186, guid: 805962c56db27c5409e3223b269a9c77, type: 3}
+  bulletDarkHit: {fileID: 1120835270511274, guid: 0f9e63bb9f6a27c408d7648dfe46cdc3, type: 3}
+  laserFire: {fileID: 3408597350677033217, guid: 69246e2f7eeda684990b20be9418d4c3, type: 3}
+  laserWater: {fileID: 4713164118674281605, guid: 0695051c1d9c1f74d814e9754a9ed451, type: 3}
+  laserNature: {fileID: 1018707620534214072, guid: 100757cff3d8a654ba39321b41590fde, type: 3}
+  laserDark: {fileID: 3829329244544091795, guid: c48a3eab725551c4f99257dcd8c13280, type: 3}
+  laserLight: {fileID: -232122515298665445, guid: ed7be145e96a7ff49a33cf9b8b727b3b, type: 3}
+  laserFireHit: {fileID: 1609335940562309349, guid: 16f3ec3776561e44f9e9f8815b7c5733, type: 3}
+  laserWaterHit: {fileID: 6751319918584673778, guid: e388f800606138d49bbb9900ec2b3b09, type: 3}
+  laserNatureHit: {fileID: 6313377755530605313, guid: caf8368be50761c4ab67b29bfda8afdc, type: 3}
+  laserDarkHit: {fileID: 2640753020809410109, guid: bfe73bfe91a438e44bc2066e180f9644, type: 3}
+  laserLightHit: {fileID: 3039053916390694680, guid: f10a87c6ebd2652468672d49070e3168, type: 3}
+  energyFire: {fileID: 7941507722557730226, guid: 0a7618cdc99b88a47bc82044803b918d, type: 3}
+  energyWater: {fileID: 7941507722557730226, guid: 687884bd20b15ec4299b95d4823e9d41, type: 3}
+  energyNature: {fileID: 7941507722557730226, guid: ad8d5166e25032e47ac0bc2b7d535422, type: 3}
+  energyDark: {fileID: 7941507722557730226, guid: 3307c6998eb377a4e996fe3e0918a385, type: 3}
+  energyLight: {fileID: 7941507722557730226, guid: ee13b4f9f7718274fb88261488e1e219, type: 3}
+  energyFireHit: {fileID: 4324847223878014415, guid: 2d306b9ad09a1de4780fe81c40d3573d, type: 3}
+  energyWaterHit: {fileID: 4324847223878014415, guid: 1ba3183789520354bb754ec6bbcb0fd2, type: 3}
+  energyNatureHit: {fileID: 4324847223878014415, guid: 6d483236d5b78f44597c2b2f39e9f79f, type: 3}
+  energyDarkHit: {fileID: 4324847223878014415, guid: 39fe49b3015444e4aa17469ec990de82, type: 3}
+  energyLightHit: {fileID: 4324847223878014415, guid: 3327276d5b975854b8a9206b1af3b04c, type: 3}
