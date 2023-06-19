@@ -11,7 +11,7 @@ namespace KETO
         [SerializeField] private float destroyDelay = 3f;
         [SerializeField] private Transform spawnTransform;
         [SerializeField] private Material trailMaterial;
-        [SerializeField] private GameObject particles;
+        [SerializeField] private ParticleSystem[] particles;
 
 
         private SkinnedMeshRenderer[] skinnedMeshRenderers;
@@ -22,12 +22,21 @@ namespace KETO
         private void Awake()
         {
             EventCenter.GetInstance().AddEventListener(Global.Events.Dash,Dash);
+            SetParticleEmission(0);
+        }
+
+        private void SetParticleEmission(float value)
+        {
+            foreach (var particle in particles)
+            {
+                var particleEmission = particle.emission;
+                particleEmission.rateOverDistance = value;
+            }
         }
 
         private void Start()
         {
-            if (particles != null)
-                particles.SetActive(false);
+            
             trailParent = new GameObject("Trail");
         }
         private void Update()
@@ -43,10 +52,13 @@ namespace KETO
 
         private void Dash()
         {
+            SetParticleEmission(3);
             isSpawn = true;
-            if (particles != null)
-                particles.SetActive(isSpawn);
             StartCoroutine(SpawnTrail(duration));
+            Global.DoTweenWait(duration, () =>
+            {
+                SetParticleEmission(0);
+            });
         }
 
         private IEnumerator SpawnTrail(float elapsedTime)
@@ -90,8 +102,7 @@ namespace KETO
                 yield return new WaitForSeconds(interval);
             }
             isSpawn = false;
-            if (particles != null)
-                particles.SetActive(isSpawn);
+            
         }
 
         private IEnumerator FadeOut(MeshRenderer meshRenderer)
