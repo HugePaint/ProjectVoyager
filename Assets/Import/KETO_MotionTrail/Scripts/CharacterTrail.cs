@@ -26,13 +26,13 @@ namespace KETO
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && !isSpawn)
-            {
-                isSpawn = true;
-                if (particles != null)
-                    particles.SetActive(isSpawn);
-                StartCoroutine(SpawnTrail(duration));
-            }
+            // if (Input.GetKeyDown(KeyCode.Space) && !isSpawn)
+            // {
+            //     isSpawn = true;
+            //     if (particles != null)
+            //         particles.SetActive(isSpawn);
+            //     StartCoroutine(SpawnTrail(duration));
+            // }
         }
 
         private IEnumerator SpawnTrail(float elapsedTime)

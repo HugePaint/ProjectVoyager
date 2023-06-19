@@ -35,6 +35,15 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""edf9e6d0-db4e-4fe5-9bbb-e8fb5c58e17d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -169,6 +178,17 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c772b0d5-9662-4c5a-ad6f-14106a0dd72a"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -178,6 +198,7 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
         // PlayerBattle
         m_PlayerBattle = asset.FindActionMap("PlayerBattle", throwIfNotFound: true);
         m_PlayerBattle_Movement = m_PlayerBattle.FindAction("Movement", throwIfNotFound: true);
+        m_PlayerBattle_Dash = m_PlayerBattle.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,11 +259,13 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerBattle;
     private IPlayerBattleActions m_PlayerBattleActionsCallbackInterface;
     private readonly InputAction m_PlayerBattle_Movement;
+    private readonly InputAction m_PlayerBattle_Dash;
     public struct PlayerBattleActions
     {
         private @PlayerBattleInput m_Wrapper;
         public PlayerBattleActions(@PlayerBattleInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerBattle_Movement;
+        public InputAction @Dash => m_Wrapper.m_PlayerBattle_Dash;
         public InputActionMap Get() { return m_Wrapper.m_PlayerBattle; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -255,6 +278,9 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnMovement;
+                @Dash.started -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerBattleActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_PlayerBattleActionsCallbackInterface = instance;
             if (instance != null)
@@ -262,6 +288,9 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -269,5 +298,6 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
     public interface IPlayerBattleActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

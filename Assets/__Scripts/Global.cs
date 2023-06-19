@@ -211,6 +211,7 @@ public static class Global
         UpdateChaos,
         PlayerGetHit,
         KillAllEnemies,
+        Dash,
         
         //boss
         BossAppear,

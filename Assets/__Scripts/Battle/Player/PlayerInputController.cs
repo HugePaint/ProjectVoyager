@@ -7,6 +7,7 @@ public class PlayerInputController : MonoBehaviour
 {
     private PlayerBattleInput playerBattleInput;
     public Vector2 currentInput;
+    public bool dash;
 
     private void Awake()
     {
@@ -30,6 +31,15 @@ public class PlayerInputController : MonoBehaviour
         else
         {
             EventCenter.GetInstance().EventTrigger(Global.Events.PlayerStopMove);
+        }
+    }
+
+    private void Update()
+    {
+        dash = playerBattleInput.PlayerBattle.Dash.triggered;
+        if (dash)
+        {
+            EventCenter.GetInstance().EventTrigger(Global.Events.Dash);
         }
     }
 }
