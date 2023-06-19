@@ -68861,6 +68861,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3644583841966709400, guid: 85462e5d24d2a6b42a68d485540c2918, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8219823771543357454, guid: 85462e5d24d2a6b42a68d485540c2918, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -68909,6 +68913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9061304544680009764, guid: 85462e5d24d2a6b42a68d485540c2918, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85462e5d24d2a6b42a68d485540c2918, type: 3}
 --- !u!1 &8219823771749001294 stripped
@@ -68933,9 +68941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9e21ae0c7a2be47a4f75fcced115f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 0.2
   interval: 0.05
-  destroyDelay: 2
+  destroyDelay: 0.8
   spawnTransform: {fileID: 750634093}
   trailMaterial: {fileID: 2100000, guid: a14321173dd8499409f0b320bc00183e, type: 2}
   particles: {fileID: 8219823771749001294}

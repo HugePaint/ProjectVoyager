@@ -7,7 +7,7 @@ public class PlayerInputController : MonoBehaviour
 {
     private PlayerBattleInput playerBattleInput;
     public Vector2 currentInput;
-    public bool dash;
+    public bool dashing;
 
     private void Awake()
     {
@@ -19,9 +19,17 @@ public class PlayerInputController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var input = playerBattleInput.PlayerBattle.Movement.ReadValue<Vector2>();
-        currentInput = input;
-        var moveDirection = new Vector3(input.x, 0f, input.y);
+        var moveDirection = new Vector3();
+        if (!dashing)
+        {
+            var input = playerBattleInput.PlayerBattle.Movement.ReadValue<Vector2>();
+            currentInput = input;
+            moveDirection = new Vector3(input.x, 0f, input.y);
+        }
+        else
+        {
+            moveDirection = new Vector3(currentInput.x, 0f, currentInput.y) * 15f;
+        }
 
         if (moveDirection.magnitude > 0)
         {
@@ -36,10 +44,16 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        dash = playerBattleInput.PlayerBattle.Dash.triggered;
-        if (dash)
+        if (playerBattleInput.PlayerBattle.Dash.triggered & !dashing)
         {
             EventCenter.GetInstance().EventTrigger(Global.Events.Dash);
+            Global.Battle.playerBehaviourController.rigidBody.drag = 15f;
+            dashing = true;
+            Global.DoTweenWait(0.1f, () =>
+            {
+                Global.Battle.playerBehaviourController.rigidBody.drag = 5f;
+                dashing = false;
+            });
         }
     }
 }

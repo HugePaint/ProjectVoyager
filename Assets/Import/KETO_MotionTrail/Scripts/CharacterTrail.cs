@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -18,6 +19,11 @@ namespace KETO
 
         private bool isSpawn = false;
 
+        private void Awake()
+        {
+            EventCenter.GetInstance().AddEventListener(Global.Events.Dash,Dash);
+        }
+
         private void Start()
         {
             if (particles != null)
@@ -33,6 +39,14 @@ namespace KETO
             //         particles.SetActive(isSpawn);
             //     StartCoroutine(SpawnTrail(duration));
             // }
+        }
+
+        private void Dash()
+        {
+            isSpawn = true;
+            if (particles != null)
+                particles.SetActive(isSpawn);
+            StartCoroutine(SpawnTrail(duration));
         }
 
         private IEnumerator SpawnTrail(float elapsedTime)
