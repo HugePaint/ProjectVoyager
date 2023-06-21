@@ -1,14 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
 using UnityEngine;
 using DG.Tweening;
-using DG.Tweening.Core;
-using DG.Tweening.Plugins.Options;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class MenuAnimator : MonoBehaviour
 {
@@ -20,9 +13,9 @@ public class MenuAnimator : MonoBehaviour
     public float animationTime = 2f;
     public float delayBetweenEntryAppear = 0.15f;
     // Total Time = animationTime + delayBetweenEntryAppear
-    public float titleDelay = 1f;
+    public float titleShowDelay = 1f;
 
-    private CanvasGroup entryParentCanvasGroup;
+    private CanvasGroup generalCanvasGroup;
     private List<GameObject> entries;
     private List<CanvasGroup> entryCanvasGroups;
 
@@ -32,6 +25,8 @@ public class MenuAnimator : MonoBehaviour
 
     void Awake()
     {
+        generalCanvasGroup = GetComponent<CanvasGroup>();
+        
         entries = new List<GameObject>();
         entryCanvasGroups = new List<CanvasGroup>();
         for (int i = 0; i < entryGroupParent.transform.childCount; i++)
@@ -44,10 +39,7 @@ public class MenuAnimator : MonoBehaviour
         entryMoveTweeners = new List<Tweener>();
         entryFadeTweeners = new List<Tweener>();
         currentMenuCamera.SetActive(false);
-        
-        EventCenter.GetInstance().AddEventListener(Global.Events.MenuOptionsHide, Hide);
-        EventCenter.GetInstance().AddEventListener(Global.Events.MenuOptionsShow, Show);
-        
+
         SetUpTweenersEntriesMove();
         SetUpTweenersEntriesFade();
         SetUpTweenerTitleFade();
@@ -55,7 +47,8 @@ public class MenuAnimator : MonoBehaviour
     
     public void Hide()
     {
-        // TODO: ToggleButtons(false);
+        generalCanvasGroup.interactable = false;
+        generalCanvasGroup.blocksRaycasts = false;
         currentMenuCamera.SetActive(false);
         
         int count = 0;
@@ -82,15 +75,18 @@ public class MenuAnimator : MonoBehaviour
             tweener.PlayBackwards();
         }
       
-        CanvasGroup titleGroup = menuTitle.GetComponent<CanvasGroup>();
-        titleFadeTweener.Kill();
-        titleFadeTweener = DOTween.To(()=> titleGroup.alpha, x=> titleGroup.alpha = x,
-            0, animationTime/2f);
+        titleFadeTweener.timeScale = 2f;
+        titleFadeTweener.PlayBackwards();
     }
 
     public void Show()
     {
-        // mainMenuCameraGroupParent.SetActive(true);
+        DOTween.To(() => 0, x => _ = x, 1f, animationTime)
+            .OnComplete(() =>
+            {
+                generalCanvasGroup.interactable = true;
+                generalCanvasGroup.blocksRaycasts = true;
+            });
         currentMenuCamera.SetActive(true);
         
         int count = 0;
@@ -122,10 +118,8 @@ public class MenuAnimator : MonoBehaviour
                 });
         }
         
-        CanvasGroup titleGroup = menuTitle.GetComponent<CanvasGroup>();
-        float titleDelay = 1f;
-        titleFadeTweener.Kill();
-        titleFadeTweener = titleGroup.DOFade(1, animationTime).SetEase(Ease.OutCubic).SetDelay(titleDelay);
+        titleFadeTweener.timeScale = 1f;
+        titleFadeTweener.SetDelay(titleShowDelay).PlayForward();
     }
     
     private void SetUpTweenersEntriesMove()
@@ -158,7 +152,7 @@ public class MenuAnimator : MonoBehaviour
     {
         titleFadeTweener = menuTitle.GetComponent<CanvasGroup>()
             .DOFade(1f, animationTime)
-            .SetEase(Ease.OutCubic).SetDelay(titleDelay).From(0f);
+            .SetEase(Ease.OutCubic).SetDelay(titleShowDelay).From(0f);
         titleFadeTweener.SetAutoKill(false).Pause();
     }
 }

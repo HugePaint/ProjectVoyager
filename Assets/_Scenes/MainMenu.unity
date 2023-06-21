@@ -19076,7 +19076,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755071663}
-  - component: {fileID: 755071664}
+  - component: {fileID: 755071665}
+  - component: {fileID: 755071666}
+  - component: {fileID: 755071667}
   m_Layer: 5
   m_Name: PreGameMenu
   m_TagString: Untagged
@@ -19106,7 +19108,19 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &755071664
+--- !u!225 &755071665
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755071662}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &755071666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19115,16 +19129,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 755071662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0c8d3944ff10d8448bc5fc1086f5b82, type: 3}
+  m_Script: {fileID: 11500000, guid: e38f71291cb447ca86c892758855e91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPositionOffset: {x: -500, y: 0, z: 0}
-  animationTime: 2
-  delayBetweenEntryAppear: 0.15
   menuTitle: {fileID: 1454722979}
-  entryParent: {fileID: 1297593002}
-  preGameCamera: {fileID: 1378050415}
-  frontLight: {fileID: 1883632673}
+  entryGroupParent: {fileID: 1297593002}
+  currentMenuCamera: {fileID: 1378050415}
+  startPositionOffset: {x: -500, y: 0, z: 0}
+  animationTime: 1
+  delayBetweenEntryAppear: 0.15
+  titleShowDelay: 1
+--- !u!114 &755071667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755071662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22f9d961669d9a47bee8e2cf048514f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuAnimator: {fileID: 755071666}
+  eventToShow: 21
+  eventToHide: 22
 --- !u!1 &758772674
 GameObject:
   m_ObjectHideFlags: 0
@@ -31479,7 +31508,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1297593003}
-  - component: {fileID: 1297593004}
   m_Layer: 5
   m_Name: PreGameButtonEntryGroup
   m_TagString: Untagged
@@ -31512,18 +31540,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1155.9421, y: -179.16687}
   m_SizeDelta: {x: 470, y: 337.4895}
   m_Pivot: {x: 0, y: 1}
---- !u!225 &1297593004
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297593002}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1300777423
 GameObject:
   m_ObjectHideFlags: 0
@@ -46754,7 +46770,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 755071664}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PreGameMenuAnimator, Assembly-CSharp
         m_MethodName: OnShow
         m_Mode: 1
