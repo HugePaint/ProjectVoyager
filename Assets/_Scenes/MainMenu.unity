@@ -19138,7 +19138,6 @@ MonoBehaviour:
   startPositionOffset: {x: -500, y: 0, z: 0}
   animationTime: 1
   delayBetweenEntryAppear: 0.15
-  titleShowDelay: 1
 --- !u!114 &755071667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32821,7 +32820,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 2
-    m_Time: 1.5
+    m_Time: 1.35
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -41610,10 +41609,10 @@ MonoBehaviour:
   entryGroupParent: {fileID: 1276488593}
   currentMenuCamera: {fileID: 255482790}
   startPositionOffset: {x: -500, y: 0, z: 0}
-  animationTime: 1.5
+  animationTime: 1
   delayBetweenEntryAppear: 0.15
-  titleShowDelay: 0
   playerLightParent: {fileID: 158105951}
+  cameraRotateAngle: 6
 --- !u!114 &1563368462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54006,9 +54005,8 @@ MonoBehaviour:
   entryGroupParent: {fileID: 605403237}
   currentMenuCamera: {fileID: 1957012884}
   startPositionOffset: {x: -800, y: 0, z: 0}
-  animationTime: 1.5
+  animationTime: 1
   delayBetweenEntryAppear: 0.15
-  titleShowDelay: 1
 --- !u!1 &2089200099
 GameObject:
   m_ObjectHideFlags: 0

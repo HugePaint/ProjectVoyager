@@ -7,6 +7,8 @@ using UnityEngine;
 public class MenuAnimatorMainMenu : MenuAnimator
 {
     public GameObject playerLightParent;
+    [Range(0, 30)]
+    public float cameraRotateAngle = 5;
     
     private Tweener cameraGroupRotate;
     private List<Light> playerLights;
@@ -48,8 +50,8 @@ public class MenuAnimatorMainMenu : MenuAnimator
     {
         currentMenuCamera.SetActive(true);
         Vector3 targetRotate = currentMenuCamera.transform.rotation.eulerAngles;
-        targetRotate.y += 4;
+        targetRotate.y += cameraRotateAngle;
         cameraGroupRotate = currentMenuCamera.transform.DORotate(targetRotate, 20f).SetEase(Ease.Linear);
-        cameraGroupRotate.SetLoops(-1, LoopType.Yoyo).Pause();
+        cameraGroupRotate.SetLoops(-1, LoopType.Yoyo);
     }
 }
