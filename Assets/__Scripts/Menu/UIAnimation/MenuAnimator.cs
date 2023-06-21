@@ -13,17 +13,16 @@ public class MenuAnimator : MonoBehaviour
     public float animationTime = 2f;
     public float delayBetweenEntryAppear = 0.15f;
     // Total Time = animationTime + delayBetweenEntryAppear
-    public float titleShowDelay = 1f;
 
-    private CanvasGroup generalCanvasGroup;
+    protected CanvasGroup generalCanvasGroup;
     private List<GameObject> entries;
     private List<CanvasGroup> entryCanvasGroups;
 
     private List<Tweener> entryMoveTweeners;
     private List<Tweener> entryFadeTweeners;
-    private Tweener titleFadeTweener;
+    protected Tweener titleFadeTweener;
 
-    void Awake()
+    protected void Awake()
     {
         generalCanvasGroup = GetComponent<CanvasGroup>();
         
@@ -75,7 +74,7 @@ public class MenuAnimator : MonoBehaviour
             tweener.PlayBackwards();
         }
       
-        titleFadeTweener.timeScale = 2f;
+        titleFadeTweener.timeScale = 3f;
         titleFadeTweener.PlayBackwards();
     }
 
@@ -118,8 +117,8 @@ public class MenuAnimator : MonoBehaviour
                 });
         }
         
-        titleFadeTweener.timeScale = 1f;
-        titleFadeTweener.SetDelay(titleShowDelay).PlayForward();
+        titleFadeTweener.timeScale = 0.5f;
+        titleFadeTweener.PlayForward();
     }
     
     private void SetUpTweenersEntriesMove()
@@ -152,7 +151,7 @@ public class MenuAnimator : MonoBehaviour
     {
         titleFadeTweener = menuTitle.GetComponent<CanvasGroup>()
             .DOFade(1f, animationTime)
-            .SetEase(Ease.OutCubic).SetDelay(titleShowDelay).From(0f);
+            .SetEase(Ease.InOutCubic).From(0f);
         titleFadeTweener.SetAutoKill(false).Pause();
     }
 }
