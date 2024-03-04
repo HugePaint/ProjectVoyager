@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 public class MenuAnimator : MonoBehaviour
@@ -38,6 +39,8 @@ public class MenuAnimator : MonoBehaviour
         entryMoveTweeners = new List<Tweener>();
         entryFadeTweeners = new List<Tweener>();
         currentMenuCamera.SetActive(false);
+        generalCanvasGroup.interactable = false;
+        generalCanvasGroup.blocksRaycasts = false;
 
         SetUpTweenersEntriesMove();
         SetUpTweenersEntriesFade();
@@ -85,6 +88,7 @@ public class MenuAnimator : MonoBehaviour
             {
                 generalCanvasGroup.interactable = true;
                 generalCanvasGroup.blocksRaycasts = true;
+                // EventSystem.current.SetSelectedGameObject(entries[0]);
             });
         currentMenuCamera.SetActive(true);
         
