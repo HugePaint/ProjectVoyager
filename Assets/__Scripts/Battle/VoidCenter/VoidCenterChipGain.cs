@@ -239,8 +239,9 @@ public class VoidCenterChipGain : MonoBehaviour
             chipGetting.Add(chip.chipInfo);
         }
         BattleRewardManager.AddToInventory(chipGetting);
-        
-        Global.Battle.chipGainUIManager.AdjustChipUINumber(Global.Battle.chipsGettingInTheEnd.Count);
+
+        var finalChipCount = Global.Battle.chipsGettingInTheEnd.Count;
+        Global.Battle.chipGainUIManager.AdjustChipUINumber(finalChipCount);
     }
 
     public void AnimationPartOne()

@@ -17,6 +17,7 @@ public class MainMenuInit : MonoBehaviour
         DOTween.Init(useSafeMode:false);
         LocalizationSettings.SelectedLocale = defaultLocale;
         LoadData();
+        Application.targetFrameRate = 60;
     }
 
     void LoadData()
