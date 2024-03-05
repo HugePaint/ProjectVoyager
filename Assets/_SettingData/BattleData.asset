@@ -134,9 +134,9 @@ MonoBehaviour:
   chaosIncreasePerTenSeconds: 1.5
   bossAppearTime: 360
   gameEndTime: 600
-  isTesting: 1
+  isTesting: 0
   testEnemyInformation:
-    enemySpiderHealth: 999999
+    enemySpiderHealth: 1
     enemySpiderDefense: 10
     enemySpiderAttack: 0
     enemySpiderAttackCoolDown: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
     enemySpiderAnimationMoveSpeed: 3
     enemySpiderMinMoveSpeed: 0
     enemySpiderEnemyType: 0
-  cannonTestActiveList: 010000000000
+  cannonTestActiveList: 010101010101
   testCannons:
   - cannonId: 0
     cannonImportInfo:

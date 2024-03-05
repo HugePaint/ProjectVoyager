@@ -212,7 +212,6 @@ public static class Global
         PlayerGetHit,
         KillAllEnemies,
         Dash,
-        DashReady,
         
         //boss
         BossAppear,
@@ -260,7 +259,9 @@ public static class Global
         CannonThreeFire,
         CannonFourFire,
         CannonFiveFire,
-        UnlockCannon
+        UnlockCannon,
+        
+        DashReady
     }
 
     public struct Misc

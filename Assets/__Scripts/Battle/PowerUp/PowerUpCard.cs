@@ -10,7 +10,7 @@ using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class PowerUpCard : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public class PowerUpCard : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     public GameObject unlockNewCannonCard;
     public GameObject upgradeCannonCard;
@@ -439,8 +439,7 @@ public class PowerUpCard : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         });
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
+    private void CardSelect() {
         GeneralPointerEnter();
         switch (powerUpType)
         {
@@ -457,8 +456,7 @@ public class PowerUpCard : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
+    private void CardDeselect() {
         GeneralPointerLeave();
         switch (powerUpType)
         {
@@ -473,5 +471,23 @@ public class PowerUpCard : MonoBehaviour,IPointerEnterHandler, IPointerExitHandl
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        CardSelect();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+       CardDeselect();
+    }
+
+    public void OnSelect(BaseEventData eventData) {
+        CardSelect();
+    }
+
+    public void OnDeselect(BaseEventData eventData) {
+        CardDeselect();
     }
 }

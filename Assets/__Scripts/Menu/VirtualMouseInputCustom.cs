@@ -425,7 +425,7 @@ namespace UnityEngine.InputSystem.UI
                 if (m_SystemMouse.position.ReadValue() != lastSystemMousePosition)
                 {
                     lastSystemMousePosition = m_SystemMouse.position.ReadValue();
-                    Debug.Log($"VirtualMouse: Virtual mouse synced from {m_VirtualMouse.position.ReadValue()} to {lastSystemMousePosition}");
+                    // Debug.Log($"VirtualMouse: Virtual mouse synced from {m_VirtualMouse.position.ReadValue()} to {lastSystemMousePosition}");
                     InputState.Change(m_VirtualMouse.position, lastSystemMousePosition);                
                 }
             }

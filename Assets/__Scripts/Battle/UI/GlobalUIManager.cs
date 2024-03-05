@@ -8,16 +8,11 @@ public class GlobalUIManager : MonoBehaviour
 {
     public BattleUIManager battleUIManager;
     public ChipGainUIManager chipGainUIManager;
-    private void Awake()
+    private void Start()
     {
         DisplayInitialUI();
     }
-
-    private void Start()
-    {
-        
-    }
-
+    
     public void DisplayInitialUI()
     {
         if (Global.Battle.battleData.isGainingChips)
