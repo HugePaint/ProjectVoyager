@@ -38,3 +38,4 @@ We will be happy to provide any help!
 
 - Thize: https://github.com/thize
 - salty3: https://github.com/salty3
+- Dusan Lazarevic: https://appsandgraphics.com/

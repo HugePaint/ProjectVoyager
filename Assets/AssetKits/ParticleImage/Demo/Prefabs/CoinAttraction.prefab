@@ -33,7 +33,6 @@ RectTransform:
   - {fileID: 813211192727349144}
   - {fileID: 6619566082503442929}
   m_Father: {fileID: 4974518237577479983}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -109,7 +108,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8530923719082059632}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -190,7 +188,6 @@ RectTransform:
   m_Children:
   - {fileID: 2643071852801193329}
   m_Father: {fileID: 4974518237577479983}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -235,7 +232,7 @@ MonoBehaviour:
   _shape: 1
   _spread: 0
   _spreadLoop: 1
-  _startDelay: 0.5
+  _startDelay: 0
   _radius: 50
   _width: 100
   _height: 100
@@ -245,6 +242,7 @@ MonoBehaviour:
   _emitOnSurface: 1
   _emitterThickness: 0
   _loop: 0
+  _prewarm: 0
   _duration: 0.3
   _playMode: 2
   _startSize:
@@ -1468,7 +1466,7 @@ MonoBehaviour:
   _rateOverLifetime: 0
   _rateOverDistance: 0
   _bursts: []
-  _trailRenderer: {fileID: 8980341935882555505}
+  _particleTrailRenderer: {fileID: 8980341935882555505}
   _trailModule:
     enabled: 1
   _trailWidth:
@@ -1636,12 +1634,16 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
     m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
     m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
+  _trailMaterial: {fileID: 0}
   _inheritParticleColor: 1
   _dieWithParticle: 1
   _trailRatio: 0.74
-  _noiseOctaves: 1
+  _noiseOffset: {x: 0, y: 0}
   _noiseFrequency: 1
   _noiseStrength: 1
+  _multithreadModule:
+    enabled: 0
+  _multithreadEnabled: 0
   _onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1661,7 +1663,9 @@ MonoBehaviour:
   moduleParticleFoldout: 1
   moduleMovementFoldout: 1
   moduleEventsFoldout: 0
-  m_Texture: {fileID: 2800000, guid: 3d0ff5cd33461428eb7ad93dcdabac65, type: 3}
+  moduleAdvancedFoldout: 0
+  m_Sprite: {fileID: 21300000, guid: 3d0ff5cd33461428eb7ad93dcdabac65, type: 3}
+  m_Texture: {fileID: 0}
 --- !u!1 &5165783055400688864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1697,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4596038176438582091}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1759,7 +1762,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8530923719082059632}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1835,7 +1837,6 @@ RectTransform:
   - {fileID: 8530923719082059632}
   - {fileID: 4596038176438582091}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

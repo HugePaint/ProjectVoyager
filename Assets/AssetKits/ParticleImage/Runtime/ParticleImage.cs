@@ -1338,7 +1338,7 @@ namespace AssetKits.ParticleImage
                 Prewarm();
             }
             
-            Simulate(_timeScale == TimeScale.Normal ? Time.deltaTime : Time.unscaledDeltaTime, true);
+            Simulate(_timeScale == TimeScale.Normal ? Time.deltaTime : Time.unscaledDeltaTime, prewarm);
 
             OnParticleStart();
         }
@@ -1547,13 +1547,13 @@ namespace AssetKits.ParticleImage
             }
             else
             {
-                sheetsArray[0] = new SpriteSheet(new Vector2(1f,1f), new Vector2(0f,0f));
-            }
-                
-            if (sprite != null)
-            {
-                var rect = DataUtility.GetOuterUV(sprite);
-                sheetsArray[0] = new SpriteSheet(new Vector2(rect[2],rect[3]), new Vector2(rect[0],rect[1]));
+                if (sprite != null)
+                {
+                    var rect = DataUtility.GetOuterUV(sprite);
+                    sheetsArray[0] = new SpriteSheet(new Vector2(rect[2],rect[3]), new Vector2(rect[0],rect[1]));
+                }
+                else
+                    sheetsArray[0] = new SpriteSheet(new Vector2(1f,1f), new Vector2(0f,0f));
             }
         }
 
@@ -2901,10 +2901,18 @@ namespace AssetKits.ParticleImage
     public static class Extensions {
         public static float Remap (this float value, float from1, float to1, float from2, float to2) {
             float v = (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+#if PARTICLE_IMAGE_JOBS
+            //Mathf.Approximately alternative for Burst compiler
+            if (math.abs(to1 - from1) < math.max(0.000001f *  math.max(math.abs(from1), math.abs(to1)), math.EPSILON * 8))
+            {
+                return to1;
+            }
+#else
             if (Mathf.Approximately(from1, to1))
             {
                 return to1;
             }
+#endif
             return v;
         }
     }

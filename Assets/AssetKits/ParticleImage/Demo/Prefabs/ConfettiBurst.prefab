@@ -32,7 +32,6 @@ RectTransform:
   m_Children:
   - {fileID: 6900920249805208618}
   m_Father: {fileID: 8805784165914375672}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87,6 +86,7 @@ MonoBehaviour:
   _emitOnSurface: 1
   _emitterThickness: 0
   _loop: 1
+  _prewarm: 0
   _duration: 1
   _playMode: 1
   _startSize:
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   - time: 0
     count: 40
     used: 1
-  _trailRenderer: {fileID: 8768379004490987532}
+  _particleTrailRenderer: {fileID: 8768379004490987532}
   _trailModule:
     enabled: 1
   _trailWidth:
@@ -1418,12 +1418,16 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
     m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
+  _trailMaterial: {fileID: 0}
   _inheritParticleColor: 1
   _dieWithParticle: 0
   _trailRatio: 0.273
-  _noiseOctaves: 1
+  _noiseOffset: {x: 0, y: 0}
   _noiseFrequency: 2
   _noiseStrength: 2
+  _multithreadModule:
+    enabled: 0
+  _multithreadEnabled: 0
   _onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1443,6 +1447,8 @@ MonoBehaviour:
   moduleParticleFoldout: 1
   moduleMovementFoldout: 1
   moduleEventsFoldout: 0
+  moduleAdvancedFoldout: 0
+  m_Sprite: {fileID: 0}
   m_Texture: {fileID: 0}
 --- !u!1 &3817557494372724381
 GameObject:
@@ -1476,7 +1482,6 @@ RectTransform:
   m_Children:
   - {fileID: 4178265537509162888}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1532,6 +1537,7 @@ MonoBehaviour:
   _emitOnSurface: 1
   _emitterThickness: 0
   _loop: 1
+  _prewarm: 0
   _duration: 1
   _playMode: 1
   _startSize:
@@ -2695,7 +2701,7 @@ MonoBehaviour:
   - time: 0
     count: 100
     used: 1
-  _trailRenderer: {fileID: 0}
+  _particleTrailRenderer: {fileID: 0}
   _trailModule:
     enabled: 0
   _trailWidth:
@@ -2863,12 +2869,16 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
     m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
+  _trailMaterial: {fileID: 0}
   _inheritParticleColor: 0
   _dieWithParticle: 0
   _trailRatio: 1
-  _noiseOctaves: 1
+  _noiseOffset: {x: 0, y: 0}
   _noiseFrequency: 0.3
   _noiseStrength: 2
+  _multithreadModule:
+    enabled: 0
+  _multithreadEnabled: 0
   _onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -2888,7 +2898,9 @@ MonoBehaviour:
   moduleParticleFoldout: 1
   moduleMovementFoldout: 0
   moduleEventsFoldout: 0
-  m_Texture: {fileID: 2800000, guid: 4112cbf1c11214e629136bbe2eb74a49, type: 3}
+  moduleAdvancedFoldout: 0
+  m_Sprite: {fileID: 21300000, guid: 4112cbf1c11214e629136bbe2eb74a49, type: 3}
+  m_Texture: {fileID: 0}
 --- !u!1 &5392551621867376708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2932,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4178265537509162888}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

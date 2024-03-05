@@ -1198,7 +1198,7 @@ MonoBehaviour:
   _bursts:
   - time: 0
     count: 5
-    used: 1
+    used: 0
   _particleTrailRenderer: {fileID: 0}
   _trailModule:
     enabled: 0
@@ -1397,7 +1397,8 @@ MonoBehaviour:
   moduleMovementFoldout: 1
   moduleEventsFoldout: 0
   moduleAdvancedFoldout: 0
-  m_Texture: {fileID: 2800000, guid: f19f9cbd444e942b296767ac39539f8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f19f9cbd444e942b296767ac39539f8f, type: 3}
+  m_Texture: {fileID: 0}
 --- !u!1 &1762952753243521488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,7 +2593,7 @@ MonoBehaviour:
   _bursts:
   - time: 0
     count: 5
-    used: 1
+    used: 0
   _particleTrailRenderer: {fileID: 0}
   _trailModule:
     enabled: 0
@@ -2791,7 +2792,8 @@ MonoBehaviour:
   moduleMovementFoldout: 1
   moduleEventsFoldout: 0
   moduleAdvancedFoldout: 0
-  m_Texture: {fileID: 2800000, guid: 13621c03ddb854c829964bd9d2e1def5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13621c03ddb854c829964bd9d2e1def5, type: 3}
+  m_Texture: {fileID: 0}
 --- !u!1 &1762952753819011471
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,7 +4016,7 @@ MonoBehaviour:
   _bursts:
   - time: 0
     count: 1
-    used: 1
+    used: 0
   _particleTrailRenderer: {fileID: 0}
   _trailModule:
     enabled: 0
@@ -4213,4 +4215,5 @@ MonoBehaviour:
   moduleMovementFoldout: 1
   moduleEventsFoldout: 0
   moduleAdvancedFoldout: 0
-  m_Texture: {fileID: 2800000, guid: 2eda31c38b4c64cd6a4076f1f4c50dee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eda31c38b4c64cd6a4076f1f4c50dee, type: 3}
+  m_Texture: {fileID: 0}

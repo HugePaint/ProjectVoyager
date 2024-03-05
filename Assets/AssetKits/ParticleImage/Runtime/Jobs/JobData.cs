@@ -67,65 +67,65 @@ namespace AssetKits.ParticleImage.Jobs
         
         public float4 Evaluate(float time, float lerp)
         {
-            switch (mode)
+            if(mode == ParticleSystemGradientMode.TwoColors)
+                return math.lerp(constantMin, constantMax, lerp);
+            if (mode == ParticleSystemGradientMode.RandomColor)
             {
-                case ParticleSystemGradientMode.Color:
-                    return constantMax;
-                case ParticleSystemGradientMode.Gradient:
-                    var count = max.Length;
-                    var index = (int)math.floor(time * (count - 1));
-                    if(index >= count)
-                        index = count - 1;
-                    var nextIndex = index + 1;
-                    if(nextIndex >= count)
-                        nextIndex = count - 1;
-                    var nextT = time * (count - 1) - index;
-                    var value = max[index];
-                    var nextValue = max[nextIndex];
-                    return math.lerp(value, nextValue, nextT);
-                case ParticleSystemGradientMode.TwoGradients:
-                    var countMin = min.Length;
-                    var indexMin = (int)math.floor(time * (countMin - 1));
-                    if(indexMin >= countMin)
-                        indexMin = countMin - 1;
-                    var nextIndexMin = indexMin + 1;
-                    if(nextIndexMin >= countMin)
-                        nextIndexMin = countMin - 1;
-                    var nextTMin = time * (countMin - 1) - indexMin;
-                    var valueMin = min[indexMin];
-                    var nextValueMin = min[nextIndexMin];
-                    var colorMin = math.lerp(valueMin, nextValueMin, nextTMin);
-                    
-                    var countMax = max.Length;
-                    var indexMax = (int)math.floor(time * (countMax - 1));
-                    if(indexMax >= countMax)
-                        indexMax = countMax - 1;
-                    var nextIndexMax = indexMax + 1;
-                    if(nextIndexMax >= countMax)
-                        nextIndexMax = countMax - 1;
-                    var nextTMax = time * (countMax - 1) - indexMax;
-                    var valueMax = max[indexMax];
-                    var nextValueMax = max[nextIndexMax];
-                    var colorMax = math.lerp(valueMax, nextValueMax, nextTMax);
-                    
-                    return math.lerp(colorMin, colorMax, lerp);
-                case ParticleSystemGradientMode.TwoColors:
-                    return math.lerp(constantMin, constantMax, lerp);
-                case ParticleSystemGradientMode.RandomColor:
-                    var count2 = max.Length;
-                    var index2 = (int)math.floor(lerp * (count2 - 1));
-                    if(index2 >= count2)
-                        index2 = count2 - 1;
-                    var nextIndex2 = index2 + 1;
-                    if(nextIndex2 >= count2)
-                        nextIndex2 = count2 - 1;
-                    var nextT2 = lerp * (count2 - 1) - index2;
-                    var value2 = max[index2];
-                    var nextValue2 = max[nextIndex2];
-                    return math.lerp(value2, nextValue2, nextT2);
-                default:
-                    return constantMax;
+                var count2 = max.Length;
+                var index2 = (int)math.floor(lerp * (count2 - 1));
+                if(index2 >= count2)
+                    index2 = count2 - 1;
+                var nextIndex2 = index2 + 1;
+                if(nextIndex2 >= count2)
+                    nextIndex2 = count2 - 1;
+                var nextT2 = lerp * (count2 - 1) - index2;
+                var value2 = max[index2];
+                var nextValue2 = max[nextIndex2];
+                return math.lerp(value2, nextValue2, nextT2);
             }
+            if (mode == ParticleSystemGradientMode.Gradient)
+            {
+                var count = max.Length;
+                var index = (int)math.floor(time * (count - 1));
+                if(index >= count)
+                    index = count - 1;
+                var nextIndex = index + 1;
+                if(nextIndex >= count)
+                    nextIndex = count - 1;
+                var nextT = time * (count - 1) - index;
+                var value = max[index];
+                var nextValue = max[nextIndex];
+                return math.lerp(value, nextValue, nextT);
+            }
+            if (mode == ParticleSystemGradientMode.TwoGradients)
+            {
+                var countMin = min.Length;
+                var indexMin = (int)math.floor(time * (countMin - 1));
+                if(indexMin >= countMin)
+                    indexMin = countMin - 1;
+                var nextIndexMin = indexMin + 1;
+                if(nextIndexMin >= countMin)
+                    nextIndexMin = countMin - 1;
+                var nextTMin = time * (countMin - 1) - indexMin;
+                var valueMin = min[indexMin];
+                var nextValueMin = min[nextIndexMin];
+                var colorMin = math.lerp(valueMin, nextValueMin, nextTMin);
+                    
+                var countMax = max.Length;
+                var indexMax = (int)math.floor(time * (countMax - 1));
+                if(indexMax >= countMax)
+                    indexMax = countMax - 1;
+                var nextIndexMax = indexMax + 1;
+                if(nextIndexMax >= countMax)
+                    nextIndexMax = countMax - 1;
+                var nextTMax = time * (countMax - 1) - indexMax;
+                var valueMax = max[indexMax];
+                var nextValueMax = max[nextIndexMax];
+                var colorMax = math.lerp(valueMax, nextValueMax, nextTMax);
+                    
+                return math.lerp(colorMin, colorMax, lerp);
+            }
+            return constantMax;
         }
     }
     
@@ -137,56 +137,54 @@ namespace AssetKits.ParticleImage.Jobs
         public float constantMax;
         public ParticleSystemCurveMode mode;
         
-        [BurstDiscard]
         public float Evaluate(float time, float lerp)
         {
-            switch (mode)
+            if (mode == ParticleSystemCurveMode.TwoConstants)
+                return math.lerp(constantMin, constantMax, lerp);
+            if (mode == ParticleSystemCurveMode.TwoCurves)
             {
-                case ParticleSystemCurveMode.Constant:
-                    return constantMax;
-                case ParticleSystemCurveMode.Curve:
-                    var count = max.Length;
-                    var index = (int)math.floor(time * (count - 1));
-                    if(index >= count)
-                        index = count - 1;
-                    var nextIndex = index + 1;
-                    if(nextIndex >= count)
-                        nextIndex = count - 1;
-                    var nextT = time * (count - 1) - index;
-                    var value = max[index];
-                    var nextValue = max[nextIndex];
-                    return math.lerp(value, nextValue, nextT);
-                case ParticleSystemCurveMode.TwoCurves:
-                    var countMin = min.Length;
-                    var indexMin = (int)math.floor(time * (countMin - 1));
-                    if(indexMin >= countMin)
-                        indexMin = countMin - 1;
-                    var nextIndexMin = indexMin + 1;
-                    if(nextIndexMin >= countMin)
-                        nextIndexMin = countMin - 1;
-                    var nextTMin = time * (countMin - 1) - indexMin;
-                    var valueMin = min[indexMin];
-                    var nextValueMin = min[nextIndexMin];
-                    var minLerp = math.lerp(valueMin, nextValueMin, nextTMin);
+                var countMin = min.Length;
+                var indexMin = (int)math.floor(time * (countMin - 1));
+                if(indexMin >= countMin)
+                    indexMin = countMin - 1;
+                var nextIndexMin = indexMin + 1;
+                if(nextIndexMin >= countMin)
+                    nextIndexMin = countMin - 1;
+                var nextTMin = time * (countMin - 1) - indexMin;
+                var valueMin = min[indexMin];
+                var nextValueMin = min[nextIndexMin];
+                var minLerp = math.lerp(valueMin, nextValueMin, nextTMin);
                     
-                    var countMax = max.Length;
-                    var indexMax = (int)math.floor(time * (countMax - 1));
-                    if(indexMax >= countMax)
-                        indexMax = countMax - 1;
-                    var nextIndexMax = indexMax + 1;
-                    if(nextIndexMax >= countMax)
-                        nextIndexMax = countMax - 1;
-                    var nextTMax = time * (countMax - 1) - indexMax;
-                    var valueMax = max[indexMax];
-                    var nextValueMax = max[nextIndexMax];
-                    var maxLerp = math.lerp(valueMax, nextValueMax, nextTMax);
+                var countMax = max.Length;
+                var indexMax = (int)math.floor(time * (countMax - 1));
+                if(indexMax >= countMax)
+                    indexMax = countMax - 1;
+                var nextIndexMax = indexMax + 1;
+                if(nextIndexMax >= countMax)
+                    nextIndexMax = countMax - 1;
+                var nextTMax = time * (countMax - 1) - indexMax;
+                var valueMax = max[indexMax];
+                var nextValueMax = max[nextIndexMax];
+                var maxLerp = math.lerp(valueMax, nextValueMax, nextTMax);
                     
-                    return math.lerp(minLerp, maxLerp, lerp);
-                case ParticleSystemCurveMode.TwoConstants:
-                    return math.lerp(constantMin, constantMax, lerp);
-                default:
-                    return constantMax;
+                return math.lerp(minLerp, maxLerp, lerp);
             }
+            if (mode == ParticleSystemCurveMode.Curve)
+            {
+                var count = max.Length;
+                var index = (int)math.clamp(math.floor(time * (count - 1)), 0, count - 1);
+                if(index >= count)
+                    index = count - 1;
+                var nextIndex = index + 1;
+                if(nextIndex >= count)
+                    nextIndex = count - 1;
+                var nextT = time * (count - 1) - index;
+                var value = max[index];
+                var nextValue = max[nextIndex];
+                return math.lerp(value, nextValue, nextT);
+            }
+            
+            return constantMax;
         }
     }
     
