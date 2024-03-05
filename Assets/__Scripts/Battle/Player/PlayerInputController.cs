@@ -63,33 +63,40 @@ public class PlayerInputController : MonoBehaviour
         return activeTouches.Count;
     }
 
-    private Vector2 ReadLatestTouchPosition() {
-        Vector2 normalizedTouchPosition = Vector2.zero;
-        if (activeTouches.Count > 0)
-        {
-            // Get the last touch in the list, which is the latest touch
-            TouchControl latestTouch = activeTouches[activeTouches.Count - 1];
-            var latestTouchPosition = latestTouch.position.ReadValue();
-            normalizedTouchPosition = new Vector2(latestTouchPosition.x / Screen.width, latestTouchPosition.y / Screen.height);
-            Debug.Log($"Latest Touch Position: {latestTouchPosition}");
-        }
-        return normalizedTouchPosition;
+    private Vector2 GetNormalizedPosition(Vector2 position)
+    {
+        // Convert position to be relative to the center of the screen
+        Vector2 centerRelativePosition = new Vector2(position.x - Screen.width / 2, position.y - Screen.height / 2);
+        
+        // Normalize based on the maximum possible distance from the center to the corner
+        float maxDistance = Mathf.Sqrt(Mathf.Pow(Screen.width / 2, 2) + Mathf.Pow(Screen.height / 2, 2));
+        Vector2 normalizedPosition = centerRelativePosition / maxDistance;
+
+        // Ensure the values are clamped between -1 and 1
+        normalizedPosition.x = Mathf.Clamp(normalizedPosition.x, -1, 1);
+        normalizedPosition.y = Mathf.Clamp(normalizedPosition.y, -1, 1);
+
+        // normalized again so the length is 1
+        return normalizedPosition.normalized;
     }
 
     private Vector2 ReadMovementInput() {
         Vector2 input = playerBattleInput.PlayerBattle.Movement.ReadValue<Vector2>();
+
+        // if no keyboard/stick input, read mouse
+        if (input.Equals(Vector2.zero) && Mouse.current != null && Mouse.current.leftButton.isPressed)
+        {
+            var normalizedMousePosition = GetNormalizedPosition(Mouse.current.position.ReadValue());
+            // Debug.Log($"PlayerInputController: Normalized Mouse Position {normalizedMousePosition}");
+            return GetNormalizedPosition(Mouse.current.position.ReadValue());
+        }
         
-        // if no keyboard/stick input, read touchscreen
+        // if no keyboard/stick & no mouse input, read touchscreen
         if (input.Equals(Vector2.zero) && UpdateActiveTouches() > 0)
         {
-            input = ReadLatestTouchPosition();
-            
-            // compare input to the center
-            input -= new Vector2(0.5f, 0.5f);
-            if (input.x > 0f) input.x = 1;
-            if (input.x < 0f) input.x = -1;
-            if (input.y > 0f) input.y = 1;
-            if (input.y < 0f) input.y = -1;
+            var normalizedTouchPosition = GetNormalizedPosition(activeTouches[^1].position.ReadValue());
+            // Debug.Log($"PlayerInputController: Normalized Last Touch Position {normalizedTouchPosition}");
+            return normalizedTouchPosition;
         }
 
         return input;
