@@ -10,6 +10,7 @@ public class PlayerInputController : MonoBehaviour
     private PlayerBattleInput playerBattleInput;
     public Vector2 currentInput;
     public bool dashing;
+    public bool canDash = true;
 
     private List<TouchControl> activeTouches = new List<TouchControl>();
 
@@ -104,16 +105,21 @@ public class PlayerInputController : MonoBehaviour
 
     private void Update()
     {
-        if (playerBattleInput.PlayerBattle.Dash.triggered & !dashing)
+        if (playerBattleInput.PlayerBattle.Dash.triggered & !dashing & canDash)
         {
             EventCenter.GetInstance().EventTrigger(Global.Events.Dash);
             Global.Battle.playerBehaviourController.rigidBody.drag = 15f;
             dashing = true;
+            canDash = false;
             currentInput = ReadMovementInput();
             Global.DoTweenWait(0.1f, () =>
             {
                 Global.Battle.playerBehaviourController.rigidBody.drag = 5f;
                 dashing = false;
+            });
+            Global.DoTweenWait(Global.Battle.battleData.dashCooldown, () => {
+                EventCenter.GetInstance().EventTrigger(Global.Events.DashReady);
+                canDash = true;
             });
         }
     }

@@ -212,6 +212,7 @@ public static class Global
         PlayerGetHit,
         KillAllEnemies,
         Dash,
+        DashReady,
         
         //boss
         BossAppear,
