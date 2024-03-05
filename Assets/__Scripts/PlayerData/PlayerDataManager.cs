@@ -150,6 +150,7 @@ public class PlayerDataManager : MonoBehaviour
         
         string json = JsonUtility.ToJson(saveData);
         System.IO.File.WriteAllText(saveDataPath, json);
+        PlayerPrefs.Save();
         
         Debug.Log("Saved to: " + saveDataPath);
     }
