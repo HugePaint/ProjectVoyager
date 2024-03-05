@@ -129,12 +129,12 @@ MonoBehaviour:
     voidCenterExpIncreaseValueEnemySpider: 1
     voidCenterExpPowerUpValue: 10
     voidCenterExpPowerUpValueIncreaseAfterEachPick: 6
-  isGainingChips: 0
+  isGainingChips: 1
   dashCooldown: 1
   chaosIncreasePerTenSeconds: 1.5
   bossAppearTime: 360
   gameEndTime: 600
-  isTesting: 0
+  isTesting: 1
   testEnemyInformation:
     enemySpiderHealth: 1
     enemySpiderDefense: 10

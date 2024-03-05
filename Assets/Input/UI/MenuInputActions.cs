@@ -735,6 +735,17 @@ public partial class @MenuInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9b38bbd2-bb90-41c6-bf7a-551c248c72be"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CreditScrollAccelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6681d33c-ae9b-4ff5-8f17-e2373014f5bc"",
                     ""path"": ""<VirtualMouse>/position"",
                     ""interactions"": """",
