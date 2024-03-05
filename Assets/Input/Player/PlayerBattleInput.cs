@@ -233,6 +233,28 @@ public partial class @PlayerBattleInput : IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b38a4e78-7663-4b01-b70d-7de079bb556d"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": ""Dash"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa4536d1-6804-4647-b733-1199cfc0dd97"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Dash"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

@@ -109,6 +109,7 @@ public class PlayerInputController : MonoBehaviour
             EventCenter.GetInstance().EventTrigger(Global.Events.Dash);
             Global.Battle.playerBehaviourController.rigidBody.drag = 15f;
             dashing = true;
+            currentInput = ReadMovementInput();
             Global.DoTweenWait(0.1f, () =>
             {
                 Global.Battle.playerBehaviourController.rigidBody.drag = 5f;
