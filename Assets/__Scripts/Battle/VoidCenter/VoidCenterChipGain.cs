@@ -8,6 +8,7 @@ public class VoidCenterChipGain : MonoBehaviour
     public ParticleSystem[] particleSystems;
     public GameObject outerRing;
     public ChipShredManager chipShredManager;
+    public ChipGainUIManager chipGainUIManager;
 
     public float normalSize;
     public float weakSize;
@@ -241,7 +242,7 @@ public class VoidCenterChipGain : MonoBehaviour
         BattleRewardManager.AddToInventory(chipGetting);
 
         var finalChipCount = Global.Battle.chipsGettingInTheEnd.Count;
-        Global.Battle.chipGainUIManager.AdjustChipUINumber(finalChipCount);
+        chipGainUIManager.AdjustChipUINumber(finalChipCount);
     }
 
     public void AnimationPartOne()
@@ -303,7 +304,7 @@ public class VoidCenterChipGain : MonoBehaviour
 
     public void AnimationPartThree()
     {
-        Global.Battle.chipGainUIManager.StageThreeAnimation();
+        chipGainUIManager.StageThreeAnimation();
     }
     
     
