@@ -244,4 +244,10 @@ public class MenuController : MonoBehaviour
         GUIUtility.systemCopyBuffer = Application.persistentDataPath;
         System.Diagnostics.Process.Start("explorer.exe", "/select,"+ Application.persistentDataPath);
     }
+
+    public void Reload() {
+        DOTween.KillAll();
+        EventCenter.GetInstance().Clear();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

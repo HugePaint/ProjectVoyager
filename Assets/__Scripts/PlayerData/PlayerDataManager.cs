@@ -176,4 +176,29 @@ public class PlayerDataManager : MonoBehaviour
         Debug.Log(String.Format("PlayerData Loaded: {0} Chips in inventory; {1} Chips in Cannon Slots.",
             saveData.inventory.Count, saveData.chipInCannons.Count));
     }
+
+    public string CreateSaveString() {
+        string json = System.IO.File.ReadAllText(saveDataPath);
+        return json;
+    }
+
+    public int LoadSaveFromString(string saveString) {
+        if (saveString == "") return 0;
+        
+        try
+        {
+            var saveData = JsonUtility.FromJson<PlayerData>(saveString);
+            if (saveData == null) return 0;
+
+            System.IO.File.WriteAllText(saveDataPath, saveString);
+            PlayerPrefs.Save();
+            Debug.Log("Imported Save: " + saveDataPath);
+            return 1;
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Save String Invalid. Check again.");
+            return 0;
+        }
+    }
 }
