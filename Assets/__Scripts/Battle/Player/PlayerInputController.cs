@@ -52,6 +52,8 @@ public class PlayerInputController : MonoBehaviour
     {
         // Clear the list of active touches each frame and repopulate it
         activeTouches.Clear();
+        if (Touchscreen.current  == null) return 0;
+        
         foreach (var touch in Touchscreen.current.touches)
         {
             if (touch.press.isPressed)
