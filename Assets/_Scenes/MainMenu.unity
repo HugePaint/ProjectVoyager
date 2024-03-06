@@ -20115,7 +20115,6 @@ GameObject:
   - component: {fileID: 719100596}
   - component: {fileID: 719100595}
   - component: {fileID: 719100594}
-  - component: {fileID: 719100592}
   m_Layer: 5
   m_Name: SaveTransferButton
   m_TagString: Untagged
@@ -20146,18 +20145,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: 40.000034}
   m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &719100592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719100590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0005ded7191ccc446bab2c1d346667e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &719100594
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -93,8 +93,8 @@ MonoBehaviour:
   m_CursorMode: 1
   m_CursorGraphic: {fileID: 576522785239145650}
   m_CursorTransform: {fileID: 576522785239145651}
-  m_CursorSpeed: 400
-  m_ScrollSpeed: 45
+  m_CursorSpeed: 800
+  m_ScrollSpeed: 100
   m_StickAction:
     m_UseReference: 0
     m_Action:
