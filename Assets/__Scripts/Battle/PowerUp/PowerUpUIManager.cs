@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PowerUpUIManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PowerUpUIManager : MonoBehaviour
         Global.DoTweenWait(1f, () =>
         {
             clickCover.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(powerUpCards[0].gameObject);
         }, true);
     }
 
@@ -79,6 +81,8 @@ public class PowerUpUIManager : MonoBehaviour
         {
             powerUpCard.Close(endPosition);
         }
+        
+        EventSystem.current.SetSelectedGameObject(null);
 
         Global.DoTweenWait(1.5f, () =>
         {

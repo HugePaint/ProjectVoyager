@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using static ChipData;
 using Random = UnityEngine.Random;
@@ -14,7 +17,9 @@ public class PlayerDataManager : MonoBehaviour
     private List<Chip> inventory;
     private List<int> unlockedMemories; //placeholder
 
-    private string saveDataPath = "/PlayerData.json";
+    private string saveDataPath;
+    private const string SaveDataFileName = "/PlayerData.json";
+    private const string BackupDataFileName = "/SaveBackup.txt";
     
     [Serializable]
     public class PlayerData
@@ -26,7 +31,7 @@ public class PlayerDataManager : MonoBehaviour
     private void Awake()
     {
         Global.MainMenu.playerDataManager = this;
-        saveDataPath = Application.persistentDataPath + saveDataPath;
+        saveDataPath = Application.persistentDataPath + SaveDataFileName;
         Global.Misc.savePath = saveDataPath;
         Initialize();
         LoadFromDisk();
@@ -150,6 +155,7 @@ public class PlayerDataManager : MonoBehaviour
         
         string json = JsonUtility.ToJson(saveData);
         System.IO.File.WriteAllText(saveDataPath, json);
+        PlayerPrefs.Save();
         
         Debug.Log("Saved to: " + saveDataPath);
     }
@@ -174,5 +180,97 @@ public class PlayerDataManager : MonoBehaviour
         
         Debug.Log(String.Format("PlayerData Loaded: {0} Chips in inventory; {1} Chips in Cannon Slots.",
             saveData.inventory.Count, saveData.chipInCannons.Count));
+    }
+
+    public string CreateSaveString() {
+        string json = System.IO.File.ReadAllText(saveDataPath);
+        return Zip(json);
+        // return json;
+    }
+
+    public int LoadSaveFromString(string saveString) {
+        if (saveString == "") return 0;
+        
+        try
+        {
+            PlayerData saveData = null;
+            if (IsBase64String(saveString))
+            {
+                Debug.Log("Base64String");
+                saveString = Unzip(saveString);
+                saveData = JsonUtility.FromJson<PlayerData>(saveString);
+            }
+            else
+            {
+                saveData = JsonUtility.FromJson<PlayerData>(saveString);
+            }
+            
+            // extra validation
+            if (saveData == null) return 0;
+
+            SaveBackup();
+
+            File.WriteAllText(saveDataPath, saveString);
+            PlayerPrefs.Save();
+            Debug.Log("Imported Save: " + saveDataPath);
+            return 1;
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Save String Invalid. Check again.");
+            return 0;
+        }
+    }
+
+    public void SaveBackup() {
+        if (File.Exists(saveDataPath) == false) return;
+        
+        string oldSave = File.ReadAllText(saveDataPath);
+        string backupSavePath = Application.persistentDataPath + BackupDataFileName;
+        File.WriteAllText(backupSavePath, Zip(oldSave));
+    }
+    
+
+    public static void CopyTo(Stream src, Stream dest) {
+        byte[] bytes = new byte[4096];
+
+        int cnt;
+
+        while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0) {
+            dest.Write(bytes, 0, cnt);
+        }
+    }
+    
+    public static string Zip(string str) {
+    
+        var bytes = Encoding.UTF8.GetBytes(str);
+    
+        using (var msi = new MemoryStream(bytes))
+        using (var mso = new MemoryStream()) {
+            using (var gs = new GZipStream(mso, CompressionMode.Compress)) {
+                //msi.CopyTo(gs);
+                CopyTo(msi, gs);
+            }
+    
+            return Convert.ToBase64String(mso.ToArray());
+        }
+    }
+    
+    public static string Unzip(string str) {
+        byte[] bytes = Convert.FromBase64String(str);
+        using (var msi = new MemoryStream(bytes))
+        using (var mso = new MemoryStream()) {
+            using (var gs = new GZipStream(msi, CompressionMode.Decompress)) {
+                //gs.CopyTo(mso);
+                CopyTo(gs, mso);
+            }
+            return Encoding.UTF8.GetString(mso.ToArray());
+        }
+    }
+    
+    public static bool IsBase64String(string base64)
+    {
+        Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
+        return Convert.TryFromBase64String(base64, buffer , out int bytesParsed);
     }
 }

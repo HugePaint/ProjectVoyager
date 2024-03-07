@@ -43,8 +43,9 @@ public class ResolutionControl : MonoBehaviour
                 filteredResolutions.Add(resolutions[i]);
             }
         }
-        
+#if (UNITY_EDITOR) || (UNITY_STANDALONE)
         LoadSettings();
+#endif
         
         List<string> options = new List<string>();
         for (int i = 0; i < filteredResolutions.Count; i++)
@@ -66,6 +67,7 @@ public class ResolutionControl : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
+#if (UNITY_EDITOR) || (UNITY_STANDALONE)
         selectedResolution = filteredResolutions[resolutionIndex];
         currentResolutionIndex = resolutionIndex;
         Debug.Log("Set Resolution: " + selectedResolution);
@@ -74,6 +76,7 @@ public class ResolutionControl : MonoBehaviour
         PlayerPrefs.SetInt(resolutionWidthPlayerPrefKey, selectedResolution.width);
         PlayerPrefs.SetInt(resolutionHeightPlayerPrefKey, selectedResolution.height);
         PlayerPrefs.SetInt(resolutionRefreshRatePlayerPrefKey, selectedResolution.refreshRate);
+#endif
     }
 
     public void SetFullscreen()

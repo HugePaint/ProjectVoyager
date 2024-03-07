@@ -6,12 +6,13 @@ namespace KETO
 {
     public class CharacterTrail : MonoBehaviour
     {
-        [SerializeField] private float duration = 3f;
+        [SerializeField] private float duration = 0.2f;
         [SerializeField] private float interval = 0.05f;
-        [SerializeField] private float destroyDelay = 3f;
+        [SerializeField] private float destroyDelay = 0.5f;
         [SerializeField] private Transform spawnTransform;
         [SerializeField] private Material trailMaterial;
         [SerializeField] private ParticleSystem[] particles;
+        [SerializeField] private float durationReadyEffect = 0.05f;
 
 
         private SkinnedMeshRenderer[] skinnedMeshRenderers;
@@ -22,6 +23,8 @@ namespace KETO
         private void Awake()
         {
             EventCenter.GetInstance().AddEventListener(Global.Events.Dash,Dash);
+            EventCenter.GetInstance().AddEventListener(Global.Events.DashReady,DashReady);
+
             SetParticleEmission(0);
         }
 
@@ -55,6 +58,17 @@ namespace KETO
             SetParticleEmission(3);
             isSpawn = true;
             StartCoroutine(SpawnTrail(duration));
+            Global.DoTweenWait(duration, () =>
+            {
+                SetParticleEmission(0);
+            });
+        }
+        
+        private void DashReady()
+        {
+            SetParticleEmission(1);
+            isSpawn = true;
+            StartCoroutine(SpawnTrail(durationReadyEffect));
             Global.DoTweenWait(duration, () =>
             {
                 SetParticleEmission(0);

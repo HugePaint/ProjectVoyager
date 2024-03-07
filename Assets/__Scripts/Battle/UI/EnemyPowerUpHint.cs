@@ -9,6 +9,7 @@ public class EnemyPowerUpHint : MonoBehaviour
     public float endX;
     public float startX;
     public Transform hintTransform;
+    public GameObject backgroundToShow;
 
     private Tween showTween;
     private Tween backTween;
@@ -17,6 +18,7 @@ public class EnemyPowerUpHint : MonoBehaviour
     {
         var position = hintTransform.localPosition;
         hintTransform.localPosition = new Vector3(startX, position.y, position.z);
+        backgroundToShow.SetActive(false);
     }
 
     public void Show()
@@ -24,6 +26,7 @@ public class EnemyPowerUpHint : MonoBehaviour
         showTween?.Kill();
         backTween?.Kill();
         backTween = null;
+        backgroundToShow.SetActive(true);
         showTween = hintTransform.DOLocalMoveX(endX, 1f).SetEase(Ease.OutBack).OnComplete(() =>
         {
             showTween = null;
@@ -41,6 +44,7 @@ public class EnemyPowerUpHint : MonoBehaviour
         backTween = hintTransform.DOLocalMoveX(startX, 1f).SetEase(Ease.InBack).OnComplete(() =>
         {
             backTween = null;
+            backgroundToShow.SetActive(false);
         });
     }
 }

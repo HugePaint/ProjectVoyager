@@ -40,7 +40,8 @@ public class BattleData : ScriptableObject
 
     [Header("Chip Gain")] 
     public bool isGainingChips;
-
+    public float dashCooldown = 1f;
+    
     public float chaosIncreasePerTenSeconds;
     public float bossAppearTime;
     public float gameEndTime;

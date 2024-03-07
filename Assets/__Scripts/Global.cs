@@ -259,7 +259,9 @@ public static class Global
         CannonThreeFire,
         CannonFourFire,
         CannonFiveFire,
-        UnlockCannon
+        UnlockCannon,
+        
+        DashReady
     }
 
     public struct Misc

@@ -162,7 +162,8 @@ public class ChipGainUIManager : MonoBehaviour
         chipViewed += 1;
         if (chipViewed >= targetMaxChip)
         {
-            backToMainButtonCanvasGroup.DOFade(1,1f).From(0f);
+            // backToMainButtonCanvasGroup.DOFade(1,1f).From(0f);
+            backToMainButtonCanvasGroup.alpha = 1f;
         }
     }
 
